@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addDigimonsThunk } from "../../store/modules/digimons/thunks";
+import { Container, Input } from "./styles";
 
 function Search() {
   const [input, setInput] = useState("");
@@ -13,18 +14,18 @@ function Search() {
   };
 
   return (
-    <section>
+    <Container>
       <h1>Procure pelo seu Digimon!</h1>
-      <article>
+      <Input>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Procure seu Digimon..."
         />
         <button onClick={() => handleSearch()}>Pesquisar</button>
-        <div>{error && <p> Nome inválido! </p>}</div>
-      </article>
-    </section>
+      </Input>
+      {error && <p> Este Digimon não existe! </p>}
+    </Container>
   );
 }
 

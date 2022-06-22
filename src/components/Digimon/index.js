@@ -1,9 +1,11 @@
+import { Container } from "./styles";
+
 function DigimonCard({ digimon, img }) {
   return (
-    <article>
+    <Container>
       <h2>{digimon}</h2>
       <img src={img} alt={digimon} />
-    </article>
+    </Container>
   );
 }
 
