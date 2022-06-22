@@ -1,15 +1,14 @@
 import { useSelector } from "react-redux";
+import DigimonCard from "../Digimon";
 
 function DigimonList() {
   const { digimons } = useSelector((state) => state);
 
   return (
     <article>
-      <ul>
-        {digimons.map((digimon, index) => (
-          <li key={index}>{digimon}</li>
-        ))}
-      </ul>
+      {digimons.map((digimon, index) => (
+        <DigimonCard key={index} digimon={digimon.name} img={digimon.img} />
+      ))}
     </article>
   );
 }

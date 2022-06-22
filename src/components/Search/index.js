@@ -8,8 +8,7 @@ function Search() {
   const dispatch = useDispatch();
 
   const handleSearch = () => {
-    setError(false);
-    dispatch(addDigimonsThunk(input, error));
+    dispatch(addDigimonsThunk(input, setError));
     setInput("");
   };
 
@@ -23,6 +22,7 @@ function Search() {
           placeholder="Procure seu Digimon..."
         />
         <button onClick={() => handleSearch()}>Pesquisar</button>
+        <div>{error && <p> Nome inválido! </p>}</div>
       </article>
     </section>
   );
